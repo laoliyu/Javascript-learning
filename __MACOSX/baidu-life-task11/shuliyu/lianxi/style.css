@@ -1,0 +1,8 @@
+html {
+  font-size: 12px;
+  background-color: rgba(255,34,255,0.133);
+}
+#book-card {
+  width: 50px;
+  height: 30px;
+}

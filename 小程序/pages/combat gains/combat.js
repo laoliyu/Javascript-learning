@@ -1,0 +1,21 @@
+Page ({
+    data:{
+        combat:[
+            {
+                score:'成绩：90',
+                time:'登入时间：2018-9-1',
+                src:'http://5b0988e595225.cdn.sohucs.com/images/20180627/d78389d325284f29818aa82b97a1782d.jpeg'
+            },
+            {
+                score:'成绩：100',
+                time:'登入时间：2018-9-3',
+                src:'http://y0.ifengimg.com/a/2016_04/08a34e97f279696.jpg'
+            },
+            {
+                score:'成绩：80',
+                time:'登入时间：2018-10-3',
+                src:'http://img4.imgtn.bdimg.com/it/u=3024342214,3537957478&fm=15&gp=0.jpg'
+            }
+        ]
+    }
+})

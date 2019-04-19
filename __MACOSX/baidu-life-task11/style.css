@@ -1,0 +1,601 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+header {
+  background: url(./images/mount.png) 0 0 no-repeat;
+  background-size: 100%;
+}
+
+header .mask {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .65);
+  overflow: hidden;
+}
+
+header .content {
+  width: 970px;
+  margin: 208px auto 0;
+  color: rgba(255, 255, 255, .7);
+}
+
+/* hello world 容器 */
+
+.hello .title {
+  font-size: 62px;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 1);
+  line-height: 72px;
+  text-align: center;
+}
+
+.hello .text {
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 32px;
+  width: 766px;
+  margin: 86px auto 0;
+  text-align: center;
+}
+
+/* 表单 */
+
+.create {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 2px;
+  margin-top: 104px;
+  padding: 61px 100px 52px;
+}
+
+.create .title {
+  text-align: center;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.create .profile {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, .3);
+  margin: 19px auto 45px;
+}
+
+.create .input input {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, .2);
+  width: 292px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  color: #fff;
+  text-indent: 22px;
+}
+
+.create .input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.create .input input[type="button"] {
+  width: 125px;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  text-indent: 0;
+}
+
+/*  */
+
+.introduce {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.introduce-content {
+  text-align: center;
+  padding-top: 79px;
+}
+
+.introduce-content .title {
+  color: #000;
+  font-size: 14px;
+}
+
+.introduce-content .text {
+  width: 657px;
+  font-size: 42px;
+  font-weight: 200;
+  color: rgba(20, 20, 20, 1);
+  line-height: 52px;
+  margin: 39px auto 0;
+}
+
+.introduce .section {
+  width: 986px;
+  margin: 85px auto 0;
+  padding-bottom: 102px;
+  font-size: 10px;
+}
+
+.section .option {
+  /* width: 400px; */
+  box-sizing: border-box;
+  display: flex;
+  /* display: inline-block; */
+}
+
+.section .option .icon {
+  margin-right: 31px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.section .option .icon.iphoneIcon {
+  width: 30px;
+  height: 49px;
+  background-image: url(./images/Phone-Icon.png);
+  border: 1px dashed gray;
+}
+
+.section .option .icon.checkIcon {
+  width: 40px;
+  height: 37px;
+  background-image: url(./images/Check-Icon.png);
+  border: 1px dashed gray;
+}
+
+.section-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 第二行内容 */
+
+.section .option .icon.PencilIcon {
+  width: 55px;
+  height: 49px;
+  background-image: url(./images/Pencil-Icon.png);
+  border: 1px dashed gray;
+}
+
+.section .option .icon.Settings-Icon {
+  /* vertical-align:middle; */
+  /* display: inline-block; */
+  /* display: flex; */
+  margin-left: 260px;
+  /* 有没有更好的办法 */
+  width: 80px;
+  height: 42px;
+  background-image: url(./images/Settings-Icon.png);
+  border: 1px dashed gray;
+}
+
+.section .option .des {
+  color: gray;
+}
+
+.section-line1 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+/* 第三部分 */
+
+.middle {
+  background: url(./images/tree.png)0 0 no-repeat;
+  background-size: 100%;
+}
+
+.middle .masks {
+  width: 100%;
+  /* 为什么在这里我将高度设置为100%,图片就显示不出来 */
+  height: 800px;
+  background: rgba(20, 20, 20, .65);
+  /* opacity: 0.65; */
+}
+
+/* 左边的内容 */
+
+.left-content {
+  margin-left: 150px;
+}
+
+.left-content .left-title {
+  /* 这里除了定位还有没有别的方法让这个标题和上边框有一定的距离，为什么只用margin-top 就不行 */
+  position: absolute;
+  margin-top: 150px;
+  width: 366px;
+  height: 137px;
+  font-size: 42px;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 1);
+  line-height: 52px;
+}
+
+.left-content .middle-content {
+  position: absolute;
+  margin-top: 300px;
+  width: 367px;
+  height: 130px;
+  font-size: 18px;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 1);
+  line-height: 28px;
+  opacity: 0.7;
+}
+
+/* 文本框的内容 */
+
+.left-content .input-something {
+  position: absolute;
+  margin-top: 500px;
+  outline: none;
+  /* border: 1px solid rgba(255, 255, 255, .2); */
+  /* background: rgba(0, 0, 0, 0); */
+  background: rgba(20, 20, 20, 1);
+  border-radius: 2px;
+  text-indent: 22px;
+  /* text-align: center; */
+}
+
+.white {
+  background-color: #fff;
+  height: 60px;
+  width: 230px;
+  /* color: #000; */
+}
+
+.left-content .input-something .op {
+  height: 60px;
+  width: 230px;
+  margin-left: 20px;
+  background: rgba(20, 20, 20, 1);
+  /* color: #fff;
+  */
+}
+
+.middle .masks .box {
+  /* 将边框设置为虚线是dashed 实线就是solid */
+  border: 1px dashed white;
+  width: 600px;
+  height: 420px;
+  position: absolute;
+  margin-top: 140px;
+  margin-left: 330px;
+  opacity: 0.5;
+}
+
+.right-content .right-box {
+  position: absolute;
+  margin-top: 110px;
+  margin-left: 600px;
+  border: 1px solid white;
+  width: 645px;
+  height: 420px;
+  opacity: 0.5;
+  border-radius: 20px;
+  /*  */
+}
+
+.right-content .screen {
+  position: absolute;
+  margin-top: 120px;
+  margin-left: 620px;
+  background: url(./images/Screen.png)0 0 no-repeat;
+  width: 600px;
+  height: 380px;
+  color: #fff;
+  /* 我要怎样才能使这张背景图片的颜色不会出现透明 */
+  /* background-color: #fff; */
+}
+
+/* 第四部分介绍产品 */
+
+.product {
+  width: 100%;
+  height: 580px;
+  background: rgba(255, 255, 255, 1);
+}
+
+/* 标题部分 */
+
+.product .product-title {
+  width: 100%;
+  height: 41px;
+  font-size: 42px;
+  font-weight: 200;
+  color: rgba(20, 20, 20, 1);
+  line-height: 52px;
+  text-align: center;
+  position: absolute;
+  margin-top: 99px;
+}
+
+/* 图片和内容部分 */
+
+.product-middle .picture .pic1 {
+  border: 1px dashed gray;
+  background: url(./images/Singleton.png) 0 0 no-repeat;
+  width: 120px;
+  height: 35px;
+  position: absolute;
+  margin-left: 150px;
+  margin-top: 228px;
+}
+
+.product-middle .picture .pic2 {
+  background: url(./images/Hero.png) 0 0 no-repeat;
+  border: 1px dashed gray;
+  width: 76px;
+  height: 34px;
+  position: absolute;
+  margin-left: 580px;
+  margin-top: 228px;
+}
+
+.product-middle .picture .pic3 {
+  background: url(./images/Portland.png) 0 0 no-repeat;
+  border: 1px dashed gray;
+  width: 117px;
+  height: 31px;
+  position: absolute;
+  margin-top: 228px;
+  margin-left: 940px;
+}
+
+/* 图片下面的内容 */
+
+.product-middle .message {
+  width: 100%;
+  height: 198px;
+  position: absolute;
+  margin-top: 302px;
+  /* 利用弹性布局是所有内容处于一行 */
+  /* display: flex; */
+  display: inline-flex;
+}
+
+.product-middle .message .mess1 {
+  width: 251px;
+  height: 198px;
+  font-size: 16px;
+  margin-left: 120px;
+  font-weight: 200;
+  color: rgba(20, 20, 20, 1);
+  line-height: 26px;
+  opacity: 0.7;
+}
+
+.product-middle .message .mess2 {
+  width: 264px;
+  height: 172px;
+  font-size: 16px;
+  margin-left: 130px;
+  font-weight: 200;
+  color: rgba(20, 20, 20, 1);
+  line-height: 26px;
+  opacity: 0.7;
+}
+
+.product-middle .message .mess3 {
+  width: 265px;
+  height: 172px;
+  font-size: 16px;
+  margin-left: 140px;
+  font-weight: 200;
+  color: rgba(20, 20, 20, 1);
+  line-height: 26px;
+  opacity: 0.7;
+}
+
+/* 第五部分 */
+
+.choose {
+  width: 100%;
+  height: 1000px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid gray;
+}
+
+.choose .choose-top {
+  width: 100%;
+  position: absolute;
+  margin-top: 50px;
+  display: flex;
+}
+
+.choose .choose-top .top-pic {
+  background: url(./images/Backgroundf.png)0 0 no-repeat;
+  width: 570px;
+  height: 350px;
+  margin-left: 120px;
+  margin-top: 50px;
+}
+
+.choose .choose-top .top-mes .mes-title {
+  width: 265px;
+  height: 47px;
+  font-size: 20px;
+  margin-left: 150px;
+  margin-top: 90px;
+  font-weight: 300;
+  color: rgba(20, 20, 20, 1);
+  line-height: 32px;
+}
+
+.choose .choose-top .top-mes .mes-body {
+  width: 305px;
+  height: 156px;
+  font-size: 16px;
+  margin-left: 150px;
+  margin-top: 20px;
+  font-weight: 200;
+  color: rgba(20, 20, 20, 1);
+  line-height: 28px;
+  opacity: 0.7;
+}
+
+/*下面那部分的图片和文字 */
+
+.choose .choose-foot {
+  width: 100%;
+  position: absolute;
+  margin-top: 500px;
+  display: flex;
+}
+
+.foot-mess {
+  width: 306px;
+  height: 153px;
+  font-size: 16px;
+  font-weight: 200;
+  color: rgba(20, 20, 20, 1);
+  line-height: 28px;
+  opacity: 0.7;
+  position: absolute;
+}
+
+.foot-title {
+  margin-top: 90px;
+  margin-left: 130px;
+  width: 321px;
+  height: 51px;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(20, 20, 20, 1);
+  line-height: 32px;
+}
+
+.foot-body {
+  width: 306px;
+  height: 153px;
+  font-size: 16px;
+  margin-left: 120px;
+  font-weight: 200;
+  color: rgba(20, 20, 20, 1);
+  line-height: 28px;
+  opacity: 0.7;
+  margin-top: 20px;
+}
+
+.choose .choose-foot .foot-pic {
+  background: url(./images/Background.png)0 0 no-repeat;
+  width: 570px;
+  height: 350px;
+  margin-left: 150px;
+  margin-top: 20px;
+}
+
+/* 我们的成员 */
+
+.partner {
+  width: 100%;
+  height: 1084px;
+  background: rgba(255, 255, 255, 1);
+  position: absolute;
+}
+
+h3 {
+  width: 100%;
+  height: 30px;
+  font-size: 42px;
+  text-align: center;
+  font-weight: 200;
+  color: rgba(20, 20, 20, 1);
+  line-height: 52px;
+  /* position: absolute; */
+  margin-top: 92px;
+}
+
+.partner .description {
+  width: 695px;
+  height: 46px;
+  font-size: 18px;
+  margin-left: 300px;
+  margin-top: 30px;
+  font-weight: 200;
+  color: rgba(20, 20, 20, 1);
+  line-height: 28px;
+  opacity: 0.7;
+}
+
+.partner .person {
+  /* display: flex; */
+  position: absolute;
+  margin-top: 50px;
+}
+
+.person .section-picture {
+  /* display: inline; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-picture .picture1 {
+  background: url(./images/Mr-z.png) 0 0 no-repeat;
+  width: 470px;
+  height: 400px;
+  margin-left: 100px;
+  /* background: rgba(20, 20, 20, 1); */
+  opacity: 0.65;
+  border-radius: 2px;
+  /* text-shadow: 100% */
+}
+
+/* 我要怎样才能设计出这个阴影的这种效果 */
+
+.picture1 .shadow {
+  width: 470px;
+  height: 400px;
+  margin-top: 30px;
+  border: 1px dashed gray;
+}
+
+.section-picture .picture2 {
+  background: url(./images/two.png) 0 0 no-repeat;
+  width: 470px;
+  height: 400px;
+  /* background:rgba(20,20,20,1); */
+  border-radius: 2px;
+  /* display: inline; */
+  /* text-shadow: 100% */
+  margin-left: 30px;
+  /* margin-top: -50px; */
+}
+
+.picture2 .shadow1 {
+  width: 470px;
+  height: 400px;
+  margin-top: 30px;
+  border: 1px dashed gray;
+  margin-left: -30px;
+}
+
+.section-picture .picture3 {
+  background: url(./images/three.png)0 0 no-repeat;
+  width: 470px;
+  height: 408px;
+  margin-left: 120px;
+  border: 1px dashed gray;
+}
+
+.section-picture .picture4 {
+  background: url(./images/Mr-s.png)0 0 no-repeat;
+  width: 470px;
+  height: 440px;
+  border: 1px dashed gray;
+}
+
+/* 第六部分 */
+

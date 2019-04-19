@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数解构</title>
+</head>
+<body>
+    
+    <script>
+        // es6对函数的扩展
+    function Person(nickName='未知昵称'){
+        // if(!nickName)
+        // {
+        //     nickName = '未知昵称';
+        // }
+        this.nickName = nickName;
+        this.nickName = nickName||'未知昵称';
+    }
+    const p1 = new Person('nickName');
+
+    const p2 = new Person();
+    // reat 参数 形式（...变量名）
+    // 获取多余的参数 变量名是数组 把多余的放入这个数组中a,...args
+    // ...args一定要放在最后
+function sum(a,...args){
+    console.log(args);
+    // console.log(arguments);
+    Array.from(arguments);
+}
+sum(2,4,8);
+
+
+    </script>
+</body>
+</html>

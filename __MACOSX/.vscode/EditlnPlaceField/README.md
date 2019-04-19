@@ -1,0 +1,1 @@
+  EditInPlace.prototype

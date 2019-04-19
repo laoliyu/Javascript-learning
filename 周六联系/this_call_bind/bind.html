@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bind</title>
+</head>
+
+<body>
+
+    <script>
+        window.value = 2;
+        var foo = {//定义了一个对象字面量
+            value: 1
+        };
+        function bar() {//定义了一个函数，生成期，
+
+            console.log(this.value);
+        }
+        bar();//主动追
+        bar.call(foo);//指定this指向foo 相亲
+        // 童养媳
+        // 指定this绑定foo,产生一个新的函数，之后运行的时候，this就是被绑的这个对象
+        var bindFoo = bar.bind(foo);
+        setTimeout(function () {
+            bindFoo();
+        }, 2000)
+        // bindFoo();
+        // document.body.addEventListener('click', function () {
+        //     alert(this.value)
+        // })
+        // var bindfoo = window.bind(foo);
+        // 1.事件函数内部 this会是事件发生的对象
+        // 2. 事件是异步的
+        // 3. bind
+        var bindWindowOnlode = bar.bind(foo);
+        window.onload = bindWindowOnlode;
+        //  function () {
+        //     bindfoo();
+        //     // alert(this.value);
+        // }
+    </script>
+
+</body>
+
+</html>

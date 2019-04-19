@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var xhr = null;
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest()
+        } else {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP")
+        }
+
+
+        //  xhr.open()做准备工作
+        // true  就是代表异步(原因javascript是单线程),false代表同步
+        xhr.open('get', 'mock.json', true)
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+        xhr.send()
+        // console.log(xhr.responseText)
+        // xhr.status 返回200就是代表访问成功，500 代表服务器出了问题
+        // readyState从0开始，意味着还没有初始化，1在执行的路上， 彻底执行完成的时候就返回3，解析完成之后就会是4
+        // console.log(xhr.readyState,xhr.status)
+        var p = new Promise((resolve, reject) => {
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.responseText);
+                    // console.log(1234);//回调函数来解决异步的问题；回调函数层层嵌套就会形成回调地狱
+                    resolve(xhr.responseText);
+                }
+            }
+        })
+        function xq() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("猛哥要相亲了")
+                    resolve("相亲很顺利")
+                }, 1000)
+         
+        })
+        }
+
+        function marry() {
+            setTimeout(()=>{
+            console.log('猛哥结婚了')
+        },500)
+          
+        }
+        p
+            .then(xq)
+            .then(marry)
+            .catch(() => {
+                console.log('猛哥出家了！')
+            })
+        // xq();
+        // console.log(1234);
+    </script>
+</body>
+
+</html>

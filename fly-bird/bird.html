@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>飞鸟</title>
+    <link rel="stylesheet" href="./bird.css">
+</head>
+
+<body>
+    <!-- 首页 -->
+    <div id="wrapBg">
+        <!-- 头部 -->
+        <div id="headTitle">
+            <img src="./img/bird0.png" alt="" id="headBird">
+        </div>
+        <!-- 开始按钮 -->
+        <button id="startBtn"></button>
+        <!-- 草地 -->
+        <div id="grassLand1"></div>
+        <div id="grassLand2"></div>
+    </div>
+    <script src="./js/baseObj.js"></script>
+    <script src="./js/bird.js"></script>
+    <script>
+        // 标题动画
+        var jsWrapBg = document.getElementById('wrapBg');
+        var jsheadTitle = document.getElementById('headTitle');
+        var jsheadBird = document.getElementById('headBird');
+        // 标题上下都动起来
+        var Y = 3,
+            index = 0,
+            imgArr = ['img/bird0.png', 'img/bird1.png'];
+        function headWave() {
+            Y *= -1;
+            jsheadTitle.style.top = jsheadTitle.offsetTop + Y + 'px';
+            // offsetTop当前选取的对象距离父容器的高度
+            jsheadBird.src = imgArr[index++];
+            // 修改图片的位置，在jQuery用attrr
+            if (index == 2) {
+                index = 0
+            }
+        }
+        var headWaveTimer = setInterval(headWave, 100);
+        // 草地动起来
+        var jsgrassLand1 = document.getElementById("grassLand1");
+        var jsgrassLand2 = document.getElementById("grassLand2");
+        function landRun() {
+            if (grassLand1.offsetLeft <= -343) {
+                jsgrassLand1.style.left = "343px";
+
+            }
+            if (grassLand2.offsetLeft <= -343) {
+                jsgrassLand2.style.left = "343px";
+
+            }
+            jsgrassLand1.style.left = jsgrassLand1.offsetLeft - 3 + 'px';
+            jsgrassLand2.style.left = jsgrassLand2.offsetLeft - 3 + 'px';
+        }
+        var headWaveTimer = setInterval(landRun, 30);
+        // 点击开始按钮
+        var jsStarBtn = document.getElementById('startBtn');
+        jsStarBtn.onclick = function () {
+            jsheadTitle.style.display = "none";
+            clearInterval();
+            jsStarBtn.style.display = "none";
+            // 小鸟登场
+            bird.showBird(jsWrapBg);
+            bird.flyBird();
+            bird.wingWave();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        //构造函数
+        function EditInPlace(id, value, parentElement) {
+            this.id = id;
+            this.value = value;
+            this.parentElement = parentElement;
+            this.createElement(this.id);
+           
+           
+        }
+        //{}
+        EditInPlace.prototype.createElement = function (id) {
+            this.containerElement = document.createElement('div');
+            this.containerElement.id = id;
+            this.parentElement.appendChild(this.containerElement);
+
+            //值
+            this.staticElement = document.createElement('span');
+            //设置默认值
+            this.staticElement.innerHTML = this.value;
+            this.containerElement.appendChild(this.staticElement);
+            
+            this.fieldElement = document.createElement('input');
+            this.fieldElement.type = "text";
+            this.fieldElement.value = this.value;
+            this.containerElement.appendChild(this.fieldElement);
+            //按钮
+            this.saveButton = document.createElement('input');
+            this.saveButton.type = 'button';
+            this.saveButton.value = 'save';
+            this.containerElement.appendChild(this.saveButton);
+
+            this.cancleButton = document.createElement('input');
+            this.cancleButton.type = 'button';
+            this.cancleButton.value = 'cancle';
+            this.containerElement.appendChild(this.cancleButton);
+            //view
+            this.convertToText();
+            this.attachEvent();
+            
+        }
+        // prototype将对象初始化
+        EditInPlace.prototype.convertToText = function () {
+            this.saveButton.style.display = 'none';
+            this.cancleButton.style.display = 'none';
+            this.fieldElement.style.display = 'none';
+            this.staticElement.style.display = 'inline';
+        }
+        // 编辑
+        EditInPlace.prototype.convertToEditAble = function () {
+            //对象的属性
+            this.saveButton.style.display = 'inline';
+            this.cancleButton.style.display = 'inline';
+            this.fieldElement.style.display = 'inline';
+            this.staticElement.style.display = 'none';
+        }
+        EditInPlace.prototype.attachEvent = function () {
+            this.staticElement.addEventListener('click',
+                () => {
+                    //箭头函数是固定好了的，他是不会改变的
+                    //普通函数就是后来执行的时候才能确定
+                    this.convertToEditAble();
+                }
+            );
+            this.saveButton.addEventListener('click', () => {
+                const val = this.fieldElement.value;
+                setTimeout(() => {
+                    this.staticElement.innerHTML = val;
+                    this.convertToText();
+                    console.log("保存成功了");
+                }, 2000)
+            }
+            );
+            this.cancleButton.addEventListener('click', ()=>{
+                this.convertToText();
+                console.log('取消成功')
+            })
+        }
+
+        const ed1 = new EditInPlace(//类的封装实例化
+            'ep1',
+            '明德厚学，爱国荣校',
+            document.getElementById('app')//将他挂载在app的节点上
+
+        );
+        const ed2 = new EditInPlace(
+            'ep1',
+            '生活好难',
+            document.getElementById('app')
+
+        );
+
+    </script>
+</body>
+
+</html>

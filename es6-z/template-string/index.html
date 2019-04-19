@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>map的用法</title>
+</head>
+
+<body>
+    <tbody id="exsese"></tbody>
+    <script>
+        const exsese = document.getElementById('exsese');
+        const arr = {
+            name: '百合',
+            price: 19
+        }
+        const newarr = [
+            { name: '水仙', price: 19 },
+            { name: '百合', price: 19 }
+        ]
+        const arrHTMLContent = newarr.map(function (arr) {
+            return `
+<tr>
+<td>${arr.name}</td>
+<td>${arr.price}</td>
+</tr>`
+
+        });
+        const htmlcontent = arrHTMLContent.join('');
+ exsese.innerHTML = htmlcontent;
+
+    </script>
+    <!-- <script
+        const arr = ['百合', '玫瑰'];
+        const newArr = arr.map(function (flower) {
+            return flower + "漂亮";
+        })
+      
+            .join();
+    </script> -->
+</body>
+
+</html>
